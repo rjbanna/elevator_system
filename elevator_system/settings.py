@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import pymysql
 from pathlib import Path
+pymysql.install_as_MySQLdb()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&sfq!06+k!8@%nk)i(^op58&#vd$$yn9)89!rr_978owcfcjhm'
+SECRET_KEY = 'django-insecure-&^$a0+c&l-a7dhfs5+!=k&wm+o285-_ss$$b!=%v614u(t8@e7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'elevator.apps.ElevatorConfig'
 ]
 
 MIDDLEWARE = [
@@ -70,14 +75,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'elevator_system.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jumpingminds',
+        'USER': 'root',
+        'PASSWORD': 'testing',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
