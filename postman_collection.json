@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "6b561e18-037d-4dd4-8e83-13635c40c4c7",
+		"name": "Jumping Minds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15805281"
+	},
+	"item": [
+		{
+			"name": "Elevator attributes",
+			"item": [
+				{
+					"name": "Door open",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/elevators/1/door/open",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"elevators",
+								"1",
+								"door",
+								"open"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Door close",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/elevators/1/door/close",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"elevators",
+								"1",
+								"door",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maintenance start",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/elevators/1/maintenance/start",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"elevators",
+								"1",
+								"maintenance",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maintenance stop",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/elevators/1/maintenance/stop",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"elevators",
+								"1",
+								"maintenance",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Elevator System",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Neptune Towers",
+									"description": "name of the system",
+									"type": "text"
+								},
+								{
+									"key": "floors",
+									"value": "10",
+									"description": "number of floors in the system",
+									"type": "text"
+								},
+								{
+									"key": "elevators",
+									"value": "5",
+									"description": "number of elevators in the system",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/systems/",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"systems",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST_URL}}/systems",
+							"host": [
+								"{{HOST_URL}}"
+							],
+							"path": [
+								"systems"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User requests an elevator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "system_id",
+							"value": "1",
+							"description": "elevator system id",
+							"type": "text"
+						},
+						{
+							"key": "current_floor",
+							"value": "1",
+							"description": "current floor where user is standing",
+							"type": "text"
+						},
+						{
+							"key": "destination_floor",
+							"value": "4",
+							"description": "destination floor where user wants to go",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST_URL}}/elevators/call/",
+					"host": [
+						"{{HOST_URL}}"
+					],
+					"path": [
+						"elevators",
+						"call",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List elevator requests",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{HOST_URL}}/elevators/1/requests",
+					"host": [
+						"{{HOST_URL}}"
+					],
+					"path": [
+						"elevators",
+						"1",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
