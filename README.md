@@ -11,6 +11,10 @@
 7. Request elevator for floor
 8. Get all the requests for the given elevator
 
+### Video walkthrough
+
+* https://drive.google.com/file/d/1cyk4MA5jtu720-mqST88whBmg_ULcGNZ/view?usp=share_link
+
 ### Steps to run this project
 
 1. Create virtual environment according to your PC/laptop OS
